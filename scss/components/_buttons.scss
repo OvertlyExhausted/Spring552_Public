@@ -1,0 +1,15 @@
+/* =============
+    Buttons
+============= */
+button{
+    border: none;
+    cursor: pointer;
+}
+.mainButton{
+    background-color: var(--red);
+    color: var(--white);
+    font-size: rem-calc(18);
+    font-weight: 800;
+    padding: 16px 40px; //moves like a clock starting at 12, so top and bottom are 16, sides are 40
+    border-radius: 8px;
+}

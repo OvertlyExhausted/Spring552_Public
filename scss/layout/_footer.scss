@@ -17,8 +17,17 @@ footer{
         font-size: rem-calc(24);
         font-weight: 600;
         margin-bottom: 8px;
+
+        @include md{
+            margin-bottom: 16px;
+        }
     }
     form{
+        width: 85vw;
+
+        @include md{
+            width: 50vw;
+        }
 
         input{
             border-radius: 0;
@@ -30,6 +39,10 @@ footer{
         }
     }
     ul{
+        padding: 32px 6vw 16px;
+        display: flex;
+        justify-content: space-between;
+
         li{
             a{
                 color: var(--white);

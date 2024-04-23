@@ -346,10 +346,6 @@ ul li {
   list-style: none;
 }
 
-.hideImg {
-  display: none;
-}
-
 /* =============
     Typography
 ============= */
@@ -436,6 +432,9 @@ textarea {
 ============= */
 footer {
   background-color: var(--black);
+  background-image: url("../images/footer/footer.jpg");
+  background-size: cover;
+  background-position: center bottom;
   color: var(--white);
   padding-bottom: 32px;
   text-align: center;
@@ -475,6 +474,12 @@ footer form button {
 #index-hero img {
   width: 100%;
 }
+#index-hero #image-index-hero {
+  height: 500px;
+  background-image: url("../images/home/hero.jpg");
+  background-size: cover;
+  background-position: center;
+}
 
 #index_Planning {
   padding: 32px 16px;
@@ -490,7 +495,11 @@ footer form button {
   text-align: left;
 }
 #index_Planning #planning_hero {
-  width: 100%;
+  background-image: url("../images/home/planning/planning.jpg");
+  height: 360px;
+  background-size: cover;
+  border-radius: 10px;
+  background-position: center;
 }
 #index_Planning #planning_callout {
   background-color: var(--green);

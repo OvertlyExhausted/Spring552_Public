@@ -25,6 +25,11 @@
 
     #image_index_hero{
         height: 70vh;
+        background-image: url('../images/home/hero.jpg');
+        background-size: cover;
+        //x = right, center left
+        //y = top, center, bottom
+        background-position: center top;
     }
 }
 

@@ -12,6 +12,12 @@
         @include md{
             padding: 0 56px;
         }
+        @include lg{
+            padding: 0 20vw;
+        }
+        @include xxl{
+            padding: 0 400px;
+        }
         p{
             font-size: rem-calc(18);
             color: var(--blue);
@@ -23,18 +29,74 @@
         }
     }
 
-    #image_index_hero{
+    
+}
+#image_index_hero{
         height: 70vh;
         background-image: url('../images/home/hero.jpg');
         background-size: cover;
         //x = right, center left
         //y = top, center, bottom
         background-position: center top;
+
+        @include md{
+            height: 60vh;
+        }
+
+        @include lg{
+            height: 70vh;
+            background-position: center bottom;
+        }
     }
-}
+
 
 #index_brands{
+    padding: 32px 16px;
+    ul{
+        display: grid;
+        grid-template-columns: repeat(4 1fr);
+        gap: 26px;
+        grid-template-areas: 
+        "NF NF yeti yeti"
+        "columbia columbia coleman coleman"
+        ". patagonia patagonia .";
 
+        @include md{
+            grid-template-columns: repeat(6 1fr);
+            grid-template-areas: 
+            "NF NF yeti yeti columbia columbia"
+            ". coleman coleman patagonia patagonia .";
+
+            gap: 20px;
+        }
+
+        @include lg{
+            grid-template-columns: repeat(5 1fr);
+            grid-template-areas: 
+            "NF yeti columbia coleman patagonia";
+
+        }
+
+        li{
+            display: flex;
+            justify-content: center;
+        }
+        #NF{
+            grid-area: NF;
+        }
+        #yeti{
+            grid-area: yeti;
+        }
+        #columbia{
+            grid-area: columbia;
+        }
+        #coleman{
+            grid-area: coleman;
+        }
+        #patagonia{
+            grid-area: patagonia;
+        }
+    }
 }
 
 #index_Planning{
@@ -69,6 +131,12 @@
             width: 80vw;
             height: 50vh;
         }
+        @include lg{
+            padding-left: 200px;
+        }
+        @include xl{
+            width: 928px;
+        }
     }
 
     #planning_callout{
@@ -81,7 +149,7 @@
         margin-top: -20px;
 
         @include md{
-
+            margin-top: -60px;
         }
 
         display: inline-block;
@@ -113,14 +181,58 @@ padding: 32px 16px;
     padding: 32px 15vw;
 }
 
-h1{
-    color: var(--blue);
+@include lg{
+    padding: 40px 15vw;
 }
-h2{
-    color: var(--aqua);
-    margin-bottom: 8px;
+
+#index_weather_xl_grid{
+
+    @include xl{
+        display: grid;
+        grid-template-columns: 50% auto;
+        gap: 32px;
+    }
+
+    grid-template-areas: "weather_content weather_icons";
+
+    #weather_icons{
+        display: grid;
+        grid-template-columns: repeat(2, 2fr);
+        gap: 16px;
+
+        @include md{
+            grid-template-columns: repeat(4, 2fr);
+            gap: 32px;
+
+            margin-bottom: 16px;
+        }
+
+        @include xl{
+            grid-area: weather_icons;
+        }
+
+        li{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    #weather_content{
+        h1{
+            color: var(--blue);
+        }
+        h2{
+            color: var(--aqua);
+            margin-bottom: 8px;
+        }
+        p{
+            margin-bottom: 24px;
+        }   
+    }
+
+    
 }
-p{
-    margin-bottom: 24px;
-}
+
+
     }

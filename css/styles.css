@@ -570,6 +570,127 @@ footer > div ul li a {
   background-position: center top;
 }
 
+#index_brands {
+  padding: 32px 16px;
+}
+#index_brands ul {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: ;
+  grid-template-columns: repeat(4 1fr);
+  gap: 26px;
+  -ms-grid-rows: auto 26px auto 26px auto;
+      grid-template-areas: "NF NF yeti yeti" "columbia columbia coleman coleman" ". patagonia patagonia .";
+}
+@media (min-width: 768px) {
+  #index_brands ul {
+    -ms-grid-columns: ;
+    grid-template-columns: repeat(6 1fr);
+    -ms-grid-rows: auto 20px auto;
+        grid-template-areas: "NF NF yeti yeti columbia columbia" ". coleman coleman patagonia patagonia .";
+    gap: 20px;
+  }
+}
+@media (min-width: 1024px) {
+  #index_brands ul {
+    -ms-grid-columns: ()[5 1fr];
+    grid-template-columns: repeat(5 1fr);
+        grid-template-areas: "NF yeti columbia coleman patagonia";
+  }
+}
+#index_brands ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+#index_brands ul #NF {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: NF;
+}
+#index_brands ul #yeti {
+  -ms-grid-row: 1;
+  -ms-grid-column: 5;
+  -ms-grid-column-span: 3;
+  grid-area: yeti;
+}
+#index_brands ul #columbia {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: columbia;
+}
+#index_brands ul #coleman {
+  -ms-grid-row: 3;
+  -ms-grid-column: 5;
+  -ms-grid-column-span: 3;
+  grid-area: coleman;
+}
+#index_brands ul #patagonia {
+  -ms-grid-row: 5;
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 3;
+  grid-area: patagonia;
+}
+@media (min-width: 768px) {
+  #index_brands ul #NF {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 3;
+  }
+  #index_brands ul #yeti {
+    -ms-grid-row: 1;
+    -ms-grid-column: 5;
+    -ms-grid-column-span: 3;
+  }
+  #index_brands ul #columbia {
+    -ms-grid-row: 1;
+    -ms-grid-column: 9;
+    -ms-grid-column-span: 3;
+  }
+  #index_brands ul #coleman {
+    -ms-grid-row: 3;
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 3;
+  }
+  #index_brands ul #patagonia {
+    -ms-grid-row: 3;
+    -ms-grid-column: 7;
+    -ms-grid-column-span: 3;
+  }
+}
+@media (min-width: 1024px) {
+  #index_brands ul #NF {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+  }
+  #index_brands ul #yeti {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+  }
+  #index_brands ul #columbia {
+    -ms-grid-row: 1;
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 1;
+  }
+  #index_brands ul #coleman {
+    -ms-grid-row: 1;
+    -ms-grid-column: 4;
+    -ms-grid-column-span: 1;
+  }
+  #index_brands ul #patagonia {
+    -ms-grid-row: 1;
+    -ms-grid-column: 5;
+    -ms-grid-column-span: 1;
+  }
+}
+
 #index_Planning {
   padding: 32px 16px;
   background-color: var(--blue);

@@ -12,3 +12,30 @@ ul{
 .hideImg{
     //display: none;
 }
+
+.xxl_grid{
+    @include xxl{
+        display: grid;
+        grid-template-columns: auto 1440px auto;
+        grid-template-areas: ". xxl_content .";
+
+        .xxl_grid_item{
+            grid-area: xxl_content;
+        }
+    
+    }
+
+}
+.xl_grid{
+    @include xl{
+        display: grid;
+        grid-template-columns: auto 1200px auto;
+        grid-template-areas: ". xl_content .";
+
+        .xl_grid_item{
+            grid-area: xl_content;
+        }
+    
+    }
+
+}

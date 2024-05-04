@@ -341,12 +341,49 @@ template {
 ul {
   padding: 0;
   margin: 0;
-  -webkit-box-flex: 4;
-      -ms-flex-positive: 4;
-          flex-grow: 4;
 }
 ul li {
   list-style: none;
+}
+
+@media (min-width: 1440px) {
+  .xxl_grid {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: auto 1440px auto;
+    grid-template-columns: auto 1440px auto;
+        grid-template-areas: ". xxl_content .";
+  }
+  .xxl_grid .xxl_grid_item {
+    grid-area: xxl_content;
+  }
+}
+
+@media (min-width: 1440px) {
+  .xxl_grid .xxl_grid_item {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+  }
+}
+
+@media (min-width: 1200px) {
+  .xl_grid {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: auto 1200px auto;
+    grid-template-columns: auto 1200px auto;
+        grid-template-areas: ". xl_content .";
+  }
+  .xl_grid .xl_grid_item {
+    grid-area: xl_content;
+  }
+}
+
+@media (min-width: 1200px) {
+  .xl_grid .xl_grid_item {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+  }
 }
 
 /* =============
@@ -434,6 +471,16 @@ textarea {
   -webkit-appearance: none;
 }
 
+form {
+  border: none;
+  border-radius: 0;
+}
+
+textarea {
+  border: none;
+  border-radius: 0;
+}
+
 /* =============
     Navigation
 ============= */
@@ -460,6 +507,12 @@ footer {
       -ms-flex-align: end;
           align-items: flex-end;
 }
+@media (min-width: 1024px) {
+  footer {
+    background-position: center;
+    height: 90vh;
+  }
+}
 footer > div {
   padding-bottom: 32px;
 }
@@ -479,6 +532,21 @@ footer > div form {
 @media (min-width: 768px) {
   footer > div form {
     width: 50vw;
+  }
+}
+@media (min-width: 1024px) {
+  footer > div form {
+    width: 45vw;
+  }
+}
+@media (min-width: 1200px) {
+  footer > div form {
+    width: 40vw;
+  }
+}
+@media (min-width: 1440px) {
+  footer > div form {
+    width: 25vw;
   }
 }
 footer > div form div {
@@ -555,6 +623,16 @@ footer > div ul li a {
     padding: 0 56px;
   }
 }
+@media (min-width: 1024px) {
+  #index-hero > div {
+    padding: 0 20vw;
+  }
+}
+@media (min-width: 1440px) {
+  #index-hero > div {
+    padding: 0 400px;
+  }
+}
 #index-hero > div p {
   font-size: 1.125rem;
   color: var(--blue);
@@ -563,11 +641,23 @@ footer > div ul li a {
 #index-hero > div button {
   margin: 32px 0;
 }
-#index-hero #image_index_hero {
+
+#image_index_hero {
   height: 70vh;
   background-image: url("../images/home/hero.jpg");
   background-size: cover;
   background-position: center top;
+}
+@media (min-width: 768px) {
+  #image_index_hero {
+    height: 60vh;
+  }
+}
+@media (min-width: 1024px) {
+  #image_index_hero {
+    height: 90vh;
+    background-position: center bottom;
+  }
 }
 
 #index_brands {
@@ -713,7 +803,7 @@ footer > div ul li a {
 }
 #index_Planning #planning_hero {
   background-image: url("../images/home/planning/planning.jpg");
-  height: 360px;
+  height: 700px;
   background-size: cover;
   border-radius: 10px;
   background-position: center;
@@ -721,7 +811,17 @@ footer > div ul li a {
 @media (min-width: 768px) {
   #index_Planning #planning_hero {
     width: 80vw;
-    height: 50vh;
+    height: 80vh;
+  }
+}
+@media (min-width: 1024px) {
+  #index_Planning #planning_hero {
+    padding-left: 200px;
+  }
+}
+@media (min-width: 1200px) {
+  #index_Planning #planning_hero {
+    width: 928px;
   }
 }
 #index_Planning #planning_callout {
@@ -733,6 +833,11 @@ footer > div ul li a {
   width: 244px;
   margin-top: -20px;
   display: inline-block;
+}
+@media (min-width: 768px) {
+  #index_Planning #planning_callout {
+    margin-top: -60px;
+  }
 }
 #index_Planning #planning_callout #clock_circle {
   margin: 0 auto 26px;
@@ -763,14 +868,64 @@ footer > div ul li a {
     padding: 32px 15vw;
   }
 }
-#index_weather h1 {
+@media (min-width: 1024px) {
+  #index_weather {
+    padding: 40px 15vw;
+  }
+}
+#index_weather #index_weather_xl_grid {
+      grid-template-areas: "weather_content weather_icons";
+}
+@media (min-width: 1200px) {
+  #index_weather #index_weather_xl_grid {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 50% 32px auto;
+    grid-template-columns: 50% auto;
+    gap: 32px;
+  }
+}
+#index_weather #index_weather_xl_grid #weather_icons {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 2fr 16px 2fr;
+  grid-template-columns: repeat(2, 2fr);
+  gap: 16px;
+}
+@media (min-width: 768px) {
+  #index_weather #index_weather_xl_grid #weather_icons {
+    -ms-grid-columns: 2fr 32px 2fr 32px 2fr 32px 2fr;
+    grid-template-columns: repeat(4, 2fr);
+    gap: 32px;
+    margin-bottom: 16px;
+  }
+}
+@media (min-width: 1200px) {
+  #index_weather #index_weather_xl_grid #weather_icons {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+    grid-area: weather_icons;
+  }
+}
+#index_weather #index_weather_xl_grid #weather_icons li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+#index_weather #index_weather_xl_grid #weather_content h1 {
   color: var(--blue);
 }
-#index_weather h2 {
+#index_weather #index_weather_xl_grid #weather_content h2 {
   color: var(--aqua);
   margin-bottom: 8px;
 }
-#index_weather p {
+#index_weather #index_weather_xl_grid #weather_content p {
   margin-bottom: 24px;
 }
 
@@ -781,15 +936,177 @@ footer > div ul li a {
   padding: 32px 16px;
   text-align: center;
 }
+@media (min-width: 768px) {
+  #view_hero {
+    padding: 32px 8vw;
+  }
+}
 #view_hero h1 {
   margin-bottom: 32px;
 }
 #view_hero p {
   color: var(--blue);
 }
+@media (min-width: 1200px) {
+  #view_hero p {
+    padding: 0 300px;
+  }
+}
 
-#view_gallery li img {
-  width: 100%;
+#view_gallery {
+  padding: 0 16px 32px 16px;
+  display: -ms-grid;
+  display: grid;
+  gap: 16px;
+  -ms-grid-columns: 1fr 16px 1fr;
+  grid-template-columns: repeat(2, 1fr);
+  -ms-grid-rows: 25vh 16px 25vh 16px 50vh 16px 50vh 16px 30vh;
+  grid-template-rows: 25vh 25vh 50vh 50vh 30vh;
+      grid-template-areas: "g1 g2" "g3 g4" "g5 g5" "g6 g6" "g7 g7";
+}
+@media (min-width: 768px) {
+  #view_gallery {
+    padding: 0 8vw 32px 8vw;
+    -ms-grid-columns: (1fr)[6];
+    grid-template-columns: repeat(6, 1fr);
+    -ms-grid-rows: 25vh 25vh 40vh 25vh;
+    grid-template-rows: 25vh 25vh 40vh 25vh;
+        grid-template-areas: "g1 g1 g1 g2 g2 g2" "g3 g3 g3 g4 g4 g4" "g5 g5 g5 g5 g6 g6" "g7 g7 g7 g7 g7 g7";
+  }
+}
+@media (min-width: 1200px) {
+  #view_gallery {
+    padding: 0 2vw 40px 2vw;
+    -ms-grid-columns: (1fr)[4];
+    grid-template-columns: repeat(4, 1fr);
+    -ms-grid-rows: 25vh 35vh 25vh;
+    grid-template-rows: 25vh 35vh 25vh;
+        grid-template-areas: "g1 g2 g3 g4" "g5 g5 g5 g6" "g7 g7 g7 g7";
+  }
+}
+#view_gallery li {
+  height: 100px;
+  background-size: cover;
+  background-position: center;
+}
+#view_gallery g1 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: g1;
+  background-image: url("../images/views/gallery-1.jpg");
+}
+#view_gallery g2 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+  grid-area: g2;
+  background-image: url("../images/views/gallery-2.jpg");
+}
+#view_gallery g3 {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: g3;
+  background-image: url("../images/views/gallery-3.jpg");
+}
+#view_gallery g4 {
+  -ms-grid-row: 3;
+  -ms-grid-column: 3;
+  grid-area: g4;
+  background-image: url("../images/views/gallery-4.jpg");
+}
+#view_gallery g5 {
+  -ms-grid-row: 5;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: g5;
+  background-image: url("../images/views/gallery-5.jpg");
+}
+#view_gallery g6 {
+  -ms-grid-row: 7;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: g6;
+  background-image: url("../images/views/gallery-6.jpg");
+}
+#view_gallery g7 {
+  -ms-grid-row: 9;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: g7;
+  background-image: url("../images/views/gallery-7.jpg");
+}
+@media (min-width: 768px) {
+  #view_gallery g1 {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 3;
+  }
+  #view_gallery g2 {
+    -ms-grid-row: 1;
+    -ms-grid-column: 4;
+    -ms-grid-column-span: 3;
+  }
+  #view_gallery g3 {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 3;
+  }
+  #view_gallery g4 {
+    -ms-grid-row: 2;
+    -ms-grid-column: 4;
+    -ms-grid-column-span: 3;
+  }
+  #view_gallery g5 {
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 4;
+  }
+  #view_gallery g6 {
+    -ms-grid-row: 3;
+    -ms-grid-column: 5;
+    -ms-grid-column-span: 2;
+  }
+  #view_gallery g7 {
+    -ms-grid-row: 4;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 6;
+  }
+}
+@media (min-width: 1200px) {
+  #view_gallery g1 {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+  }
+  #view_gallery g2 {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+  }
+  #view_gallery g3 {
+    -ms-grid-row: 1;
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 1;
+  }
+  #view_gallery g4 {
+    -ms-grid-row: 1;
+    -ms-grid-column: 4;
+    -ms-grid-column-span: 1;
+  }
+  #view_gallery g5 {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 3;
+  }
+  #view_gallery g6 {
+    -ms-grid-row: 2;
+    -ms-grid-column: 4;
+    -ms-grid-column-span: 1;
+  }
+  #view_gallery g7 {
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 4;
+  }
 }
 
 /* =============
@@ -803,4 +1120,121 @@ footer > div ul li a {
 #contact_form {
   background-color: var(--seaFoamGreen);
   padding: 32px 16px;
+}
+#contact_form form {
+  display: -ms-grid;
+  display: grid;
+  gap: 16px;
+  -ms-grid-rows: 90px 16px 90px 16px 200px 16px auto;
+  grid-template-rows: 90px 90px 200px auto;
+}
+@media (min-width: 768px) {
+  #contact_form form {
+    padding: 0 10vw;
+    -ms-grid-columns: 50% auto;
+    grid-template-columns: 50% auto;
+    -ms-grid-rows: 8vh 16vh auto;
+    grid-template-rows: 8vh 16vh auto;
+        grid-template-areas: "name email" "message message" ". send_button";
+  }
+}
+#contact_form form div {
+  background-color: var(--white);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+#contact_form form div input {
+  width: 100%;
+  padding: 5px;
+  padding-left: 8px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+#contact_form form div textarea {
+  padding-top: 8px;
+  padding-left: 8px;
+  width: 100%;
+  height: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+#contact_form form div ::-webkit-input-placeholder {
+  color: var(--blueDark);
+  opacity: 1;
+}
+#contact_form form div ::-moz-placeholder {
+  color: var(--blueDark);
+  opacity: 1;
+}
+#contact_form form div :-ms-input-placeholder {
+  color: var(--blueDark);
+  opacity: 1;
+}
+#contact_form form div ::-ms-input-placeholder {
+  color: var(--blueDark);
+  opacity: 1;
+}
+#contact_form form div ::placeholder {
+  color: var(--blueDark);
+  opacity: 1;
+}
+#contact_form form div :-ms-input-placeholder {
+  color: var(--blueDark);
+}
+@media (min-width: 768px) {
+  #contact_form form #contact_name {
+    grid-area: name;
+  }
+}
+@media (min-width: 768px) {
+  #contact_form form #contact_email {
+    grid-area: email;
+  }
+}
+#contact_form #contact_message {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+@media (min-width: 768px) {
+  #contact_form #contact_message {
+    grid-area: message;
+  }
+}
+#contact_form #contact_button {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  background-color: transparent;
+}
+@media (min-width: 768px) {
+  #contact_form #contact_button {
+    grid-area: send_button;
+  }
+}
+@media (min-width: 768px) {
+  #contact_form form #contact_name {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+  }
+  #contact_form form #contact_email {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+  }
+  #contact_form #contact_message {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+  }
+  #contact_form #contact_button {
+    -ms-grid-row: 3;
+    -ms-grid-column: 2;
+  }
 }

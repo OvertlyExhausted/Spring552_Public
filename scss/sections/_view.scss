@@ -22,11 +22,15 @@ color: var(--blue);
 }
 
 }
+
+
+
 #view_gallery{
     padding: 0 16px 32px 16px;
 
     display: grid;
     gap: 16px;
+    
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 25vh 25vh 50vh 50vh 30vh;
     grid-template-areas: 
@@ -58,6 +62,7 @@ color: var(--blue);
     }
 
         li{
+            height: 100px;
             background-size: cover;
             background-position: center;
         }
@@ -75,7 +80,7 @@ color: var(--blue);
     } 
     g4{
         grid-area: g4;
-        background-image: url("../images/views/gallery-4.jpg");
+       background-image: url("../images/views/gallery-4.jpg");
     }         
     g5{
         grid-area: g5;
@@ -83,14 +88,11 @@ color: var(--blue);
     } 
     g6{
         grid-area: g6;
-        background-image: url("../images/views/gallery-6.jpg");
+       background-image: url("../images/views/gallery-6.jpg");
     } 
     g7{
         grid-area: g7;
-        background-image: url("../images/views/gallery-7.jpg");
+       background-image: url("../images/views/gallery-7.jpg");
     } 
   
-
-
-
 }

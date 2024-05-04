@@ -44,7 +44,7 @@
         }
 
         @include lg{
-            height: 70vh;
+            height: 90vh;
             background-position: center bottom;
         }
     }
@@ -122,14 +122,14 @@
 
     #planning_hero{
         background-image: url("../images/home/planning/planning.jpg");
-        height: 360px;
+        height: 700px;
         background-size: cover;
         border-radius: 10px;
         background-position: center;
 
         @include md{
             width: 80vw;
-            height: 50vh;
+            height: 80vh;
         }
         @include lg{
             padding-left: 200px;

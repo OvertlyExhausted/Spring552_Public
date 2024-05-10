@@ -12,24 +12,40 @@
      <!--FontAwesome-->
      <script src="https://kit.fontawesome.com/be12a7f72e.js" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="css/styles.css">
-    <title>Week 5</title>
+    <title>Week 6</title>
 </head>
 
 <body>
-    <header>
-        <a href="index.html"><img src="images\header\logo.svg" alt="Mountain logo"></a>
-        <nav>
+    <header class = "xl_grid">
+        <div id = "header_container" class = "xl_grid_item">
+             <div id = "logo_container">
+                <a href="index.html"><img src="images\header\logo.svg" alt="Mountain logo"></a>  
+            </div>
+        
+            <div id ="burger_container"><button><i class="fa-solid fa-bars"></i></button></div>
+            <nav id = "main_nav">
             <ul>
-                <li><a href="#"><img src="images\header\icons\planning.svg" alt="Shopping Bag">Planning</a></li>
+                <li>
+                    <a href="#index_Planning"><i class="fa-solid fa-suitcase-rolling"></i>Planning</a>
+                </li>
 
-                <li><a href="#"><img src="images\header\icons\weather.svg" alt="Sun icon">Weather</a></li>
+                <li>
+                    <a href="#index_weather"><i class="fa-solid fa-sun"></i>Weather</a>
+                </li>
 
-                <li><a href="View.html"><img src="images\header\icons\views.svg" alt="binochular icon">Views</a></li>
+                <li>
+                    <a href="View.html"><i class="fa-solid fa-binoculars"></i>Views</a>
+                </li>
 
-                <li><a href="contact.html"><img src="images\header\icons\contact.svg" alt="Links icon">Follow Us</a></li>
+                <li>
+                    <a href="contact.html"><i class="fa-regular fa-paper-plane"></i>Follow Us</a>
+                </li>
 
             </ul>
-        </nav>
+            </nav>    
+        </div>
+     
+        
     </header>
 
     <section id ="view_hero" class = "xl_grid">

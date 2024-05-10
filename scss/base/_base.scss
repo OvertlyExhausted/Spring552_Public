@@ -12,6 +12,9 @@ ul{
 .hideImg{
     //display: none;
 }
+.header_padding{
+    padding: 90px;
+}
 
 .xxl_grid{
     @include xxl{
